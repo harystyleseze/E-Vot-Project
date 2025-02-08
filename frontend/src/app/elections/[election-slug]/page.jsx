@@ -14,12 +14,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Page() {
-  const [elected, setElected] =
-    useState <
-    { id: number | null } >
-    {
-      id: null,
-    };
+  const [elected, setElected] = useState();
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",
     candidate: "Emeka Peters",
@@ -47,17 +42,19 @@ export default function Page() {
               <div
                 key={idx}
                 className={cn(
-                  "h-32 md:h-full",
-                  elected.id === idx &&
-                    "bg-slate-900/30 border border-slate-700",
+                  "h-32 md:h-full transition-all rounded-lg",
+                  elected === idx && "border border-slate-700 relative",
                 )}
-                onClick={() => setElected({id: idx})}
+                onClick={() => setElected(idx)}
               >
+                {elected === idx && (
+                  <div className="absolute inset-0 bg-slate-900 z-10 opacity-50" />
+                )}
                 <CandidateAvatar image={cand.img} name={cand.candidate} />
               </div>
             ))}
           </CardContent>
-          <CardFooter className="fixed bottom-0 inset-x-0 shadow md:shadow-none h-20 bg-white dark:bg-slate-800 md:bg-transparent dark:md:bg-transparent flex flex-col py-1 gap-2 md:relative md:items-start">
+          <CardFooter className="fixed bottom-0 inset-x-0 shadow md:shadow-none h-20 z-20 backdrop-blur-md md:bg-transparent dark:md:bg-transparent flex flex-col py-1 gap-2 md:relative md:items-start">
             <p className="text-sm">{candidates.length} Candidates</p>
             <Button className="w-full py-5 b uppercase">Vote</Button>
           </CardFooter>

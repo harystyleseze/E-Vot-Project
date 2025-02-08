@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Web3 } from "web3";
@@ -126,3 +126,5 @@ export default function VotingModal ({onCloseModal, info, emitVoteSuccess}) {
         </>
     )
 }
+*/
+

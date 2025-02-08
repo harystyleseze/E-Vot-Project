@@ -1,4 +1,4 @@
-import Web3 from 'web3';
+/* import Web3 from 'web3';
 import Web3Modal from 'web3modal';
 
 const providerOptions = {}; // You can configure specific providers here
@@ -16,3 +16,5 @@ export const connectWallet = async () => {
   const web3 = new Web3(provider);
   return web3;
 };
+
+*/

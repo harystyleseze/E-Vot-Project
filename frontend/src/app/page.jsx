@@ -1,4 +1,3 @@
-import { CheckIsConnectedButton } from "@/components/ui/buttons";
 import { Target } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +7,8 @@ import Link from "next/link";
 const features = [
   {
     title: "Easy Registration",
-    description: "We offer seamless registration process to quickly get you onboard",
+    description:
+      "We offer seamless registration process to quickly get you onboard",
   },
   {
     title: "Secure Voting System",
@@ -73,24 +73,34 @@ export default function HOME() {
       </div>
       <div className="pt-10 px-8 md:px-20 mt-10">
         <div className="py-8">
-          <p className="text-4xl font-bold tracking-tighter leading-tight form-item">Welcome To E-vot</p>
-          <p className="form-item flex items-center gap-2"> <hr className="w-10 border-primary" /> Vote to make your voice heard</p>
+          <p className="text-4xl font-bold tracking-tighter leading-tight form-item">
+            Welcome To E-vot
+          </p>
+          <p className="form-item flex items-center gap-2">
+            {" "}
+            Vote to make your voice heard
+          </p>
         </div>
         <div className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-8 form-item">
           {features.map((feature, index) => (
-            <div key={index} className="shadow-md border rounded-lg px-6 py-10 flex flex-col gap-2 justify-center items-start form-item">
+            <div
+              key={index}
+              className="shadow-md border rounded-lg px-6 py-10 flex flex-col gap-2 justify-center items-start form-item"
+            >
               <div className="flex flex-col items-start gap-2">
                 <Target />
                 {/* icon */}
-                <p className="text-2xl leading-tight tracking-tighter font-medium">{feature.title}</p>
+                <p className="text-2xl leading-tight tracking-tighter font-medium">
+                  {feature.title}
+                </p>
               </div>
-              <p className="text-sm font-normal text-[#8F96A1]">{feature.description}</p>
+              <p className="text-sm font-normal text-[#8F96A1]">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
-        <div className="flex justify-center items-center w-full">
-          <CheckIsConnectedButton />
-        </div>
+        <div className="flex justify-center items-center w-full"></div>
       </div>
     </div>
   );

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesmorgan/Developer/web3/E-Vot-Project/frontend/node_modules/.pnpm/%40rainbow-me%2Brainbowkit%402.2.3_%40tanstack%2Breact-query%405.66.0_react%4019.0.0__%40types%2Breact%4019.0.8_r_hevz6gfkdu6ny32oml3oej6twq/node_modules/%40rainbow-me/rainbowkit/dist/en_US-AV7YDYDW.js"],"sourcesContent":["\"use client\";\nimport {\n  en_US_default\n} from \"./chunk-X4GSACNW.js\";\nexport {\n  en_US_default as default\n};\n"],"names":[],"mappings":";AAAA","ignoreList":[0]}},
+    {"offset": {"line": 11, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

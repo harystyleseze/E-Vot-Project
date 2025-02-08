@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { CandidateAvatar } from "@/components/ui/candidate-avatar";
 import {
@@ -7,10 +9,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Web3 } from "web3";
+import { useState } from "react";
 
 export default function Page() {
+  const [elected, setElected] =
+    useState <
+    { id: number | null } >
+    {
+      id: null,
+    };
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",
     candidate: "Emeka Peters",
@@ -31,11 +40,19 @@ export default function Page() {
             <div className="text-xs uppercase flex items-center gap-1">
               <div className="size-1 bg-red-500 rounded-full" />
               Restricted
-              </div>
+            </div>
           </CardHeader>
           <CardContent className="mb-24 md:mb-0 h-full py-6 overflow-y-scroll grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
             {candidates.map((cand, idx) => (
-              <div key={idx} className="h-32 md:h-full">
+              <div
+                key={idx}
+                className={cn(
+                  "h-32 md:h-full",
+                  elected.id === idx &&
+                    "bg-slate-900/30 border border-slate-700",
+                )}
+                onClick={() => setElected({id: idx})}
+              >
                 <CandidateAvatar image={cand.img} name={cand.candidate} />
               </div>
             ))}

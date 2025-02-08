@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { CandidateAvatar } from "@/components/ui/candidate-avatar";
 import {
@@ -7,10 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Web3 } from "web3";
+import { useState } from "react";
 
 export default function Page() {
+  const [elected, setElected] = useState();
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",
     candidate: "Emeka Peters",
@@ -31,16 +35,26 @@ export default function Page() {
             <div className="text-xs uppercase flex items-center gap-1">
               <div className="size-1 bg-red-500 rounded-full" />
               Restricted
-              </div>
+            </div>
           </CardHeader>
           <CardContent className="mb-24 md:mb-0 h-full py-6 overflow-y-scroll grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
             {candidates.map((cand, idx) => (
-              <div key={idx} className="h-32 md:h-full">
+              <div
+                key={idx}
+                className={cn(
+                  "h-32 md:h-full transition-all rounded-lg",
+                  elected === idx && "border border-slate-700 relative",
+                )}
+                onClick={() => setElected(idx)}
+              >
+                {elected === idx && (
+                  <div className="absolute inset-0 bg-slate-900 z-10 opacity-50" />
+                )}
                 <CandidateAvatar image={cand.img} name={cand.candidate} />
               </div>
             ))}
           </CardContent>
-          <CardFooter className="fixed bottom-0 inset-x-0 shadow md:shadow-none h-20 bg-white dark:bg-slate-800 md:bg-transparent dark:md:bg-transparent flex flex-col py-1 gap-2 md:relative md:items-start">
+          <CardFooter className="fixed bottom-0 inset-x-0 shadow md:shadow-none h-20 z-20 backdrop-blur-md md:bg-transparent dark:md:bg-transparent flex flex-col py-1 gap-2 md:relative md:items-start">
             <p className="text-sm">{candidates.length} Candidates</p>
             <Button className="w-full py-5 b uppercase">Vote</Button>
           </CardFooter>

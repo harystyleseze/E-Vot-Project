@@ -33,7 +33,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="col-start-2 row-span-1 md:col-start-4 flex justify-end text-right">
-        <ConnectButton label=" Sign in " chainStatus="icon" />
+        <ConnectButton chainStatus="icon" />
       </div>
     </nav>
   );

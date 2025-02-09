@@ -1,6 +1,5 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import ElectionPill from "../../components/election-pill";
-import GovtElections from "../../components/govt/elections";
+import GovtElections from "@/components/govt/elections";
 import GovtElectionResult from "@/components/govt/results";
 
 export default function Elections() {

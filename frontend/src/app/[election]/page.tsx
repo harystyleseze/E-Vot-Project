@@ -1,10 +1,25 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import ElectionPill from "../../components/election-pill";
-import GovtElections from "../../components/govt/elections";
+import GovtElections from "@/components/govt/elections";
 import GovtElectionResult from "@/components/govt/results";
+import InstituteResult from "@/components/institute/results";
+import InstituteElections from "@/components/institute/elections";
 
-export default function Elections() {
+export function generateStaticParams() {
+  return ["government", "institution"].map((el) => ({
+    election: el,
+  }));
+}
+
+export default async function Elections({
+  params,
+}: {
+  params: Promise<{ election: string }>;
+}) {
+  const { election } = await params;
   const tabs = ["elections", "results"];
+
+  console.log("Slug", election, "\nparams", await params)
+  const isGovernment = election === "government";
 
   return (
     <div>
@@ -22,10 +37,10 @@ export default function Elections() {
           </TabList>
           <TabPanels className="py-5">
             <TabPanel>
-              <GovtElections />
+              {isGovernment ? <GovtElections /> : <InstituteElections />}
             </TabPanel>
             <TabPanel>
-              <GovtElectionResult />
+              {isGovernment ? <GovtElectionResult /> : <InstituteResult />}
             </TabPanel>
           </TabPanels>
         </TabGroup>

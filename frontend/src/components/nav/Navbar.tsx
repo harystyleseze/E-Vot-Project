@@ -14,13 +14,13 @@ export default function Navbar() {
       </div>
       <div className="row-start-2 col-span-full md:row-start-1 md:col-start-2 md:col-span-2 w-full flex items-center justify-center uppercase font-medium gap-5 text-muted ">
         <Link
-          href="/elections"
-          className={`${pathname.includes("elections") ? "border-b-2 text-primary dark:text-slate-100 dark:border-slate-100 border-primary" : ""} p-1 `}
+          href="/government"
+          className={`${pathname.includes("government") ? "border-b-2 text-primary dark:text-slate-100 dark:border-slate-100 border-primary" : ""} p-1 `}
         >
           Government
         </Link>
         <Link
-          href="/election"
+          href="/institution"
           className={`${pathname.includes("institution") ? "border-b-2 dark:text-slate-100 dark:border-slate-100 text-primary border-primary" : ""} p-1 `}
         >
           Institution
@@ -33,7 +33,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="col-start-2 row-span-1 md:col-start-4 flex justify-end text-right">
-        <ConnectButton label=" Sign in " chainStatus="icon" />
+        <ConnectButton chainStatus="icon" />
       </div>
     </nav>
   );

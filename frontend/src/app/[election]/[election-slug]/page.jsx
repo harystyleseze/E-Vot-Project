@@ -52,7 +52,7 @@ export default function Page() {
                 onClick={() => setElected(idx)}
               >
                 {elected === idx && (
-                  <div className="absolute inset-0 bg-slate-900 z-10 opacity-50" />
+                  <div className="absolute inset-0 bg-slate-900 z-10 opacity-50 transition-all" />
                 )}
                 <CandidateAvatar image={cand.img} name={cand.candidate} />
               </div>

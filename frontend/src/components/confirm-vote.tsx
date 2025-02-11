@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
@@ -57,12 +56,7 @@ export function VoteDrawerDialog() {
             You can not change this selction.
           </DrawerDescription>
         </DrawerHeader>
-        <ConfimSelection setOpen={setOpen} className="px-4" />
-        <DrawerFooter className="pt-2">
-          <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </DrawerClose>
-        </DrawerFooter>
+        <ConfimSelection setOpen={setOpen} className="px-4 pb-6" />
       </DrawerContent>
     </Drawer>
   );
@@ -71,7 +65,9 @@ export function VoteDrawerDialog() {
 function ConfimSelection({
   className,
   setOpen,
-}: React.ComponentProps<"div"> & { setOpen: React.SetStateAction }) {
+}: React.ComponentProps<"div"> & {
+  setOpen: (value: boolean) => void;
+}) {
   function handleOnClickNo() {
     setOpen(false);
   }

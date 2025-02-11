@@ -1,5 +1,6 @@
 "use client";
 
+import { VoteDrawerDialog } from "@/components/confirm-vote";
 import { Button } from "@/components/ui/button";
 import { CandidateAvatar } from "@/components/ui/candidate-avatar";
 import {
@@ -10,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -60,7 +60,7 @@ export default function Page() {
           </CardContent>
           <CardFooter className="fixed bottom-0 inset-x-0 shadow md:shadow-none h-20 z-20 backdrop-blur-md md:bg-transparent dark:md:bg-transparent flex flex-col py-1 gap-2 md:relative md:items-start">
             <p className="text-sm">{candidates.length} Candidates</p>
-            <Button className="w-full py-5 b uppercase">Vote</Button>
+            <VoteDrawerDialog />
           </CardFooter>
         </Card>
       </div>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
  * @type {ElectionPillProps}
  * */
 const ElectionPill = (props) => {
-  const {} = props;
+  const { electionType } = props;
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",
     candidate: "Emeka Peters",
@@ -54,7 +54,7 @@ const ElectionPill = (props) => {
       </div>
       <div className="row-start-2 col-span-2 md:col-auto md:row-span-1 w-full pt-3 md:pt-0 text-center md:pl-4">
         <Link
-          href={`/elections/one`}
+          href={`/${electionType}/one`}
           className={cn(buttonVariants(), "w-full")}
         >
           Open

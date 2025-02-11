@@ -22,7 +22,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-export function DrawerDialogDemo() {
+export function VoteDrawerDialog() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -30,7 +30,7 @@ export function DrawerDialogDemo() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline">Vote</Button>
+          <Button className="w-full uppercase py-5">Vote</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
@@ -39,7 +39,7 @@ export function DrawerDialogDemo() {
               You can not change this selction.
             </DialogDescription>
           </DialogHeader>
-          <ProfileForm />
+          <ConfimSelection setOpen={setOpen} />
         </DialogContent>
       </Dialog>
     );
@@ -48,7 +48,7 @@ export function DrawerDialogDemo() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant="outline">Confirm your selection</Button>
+        <Button className="w-full uppercase py-5">Vote</Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
@@ -57,7 +57,7 @@ export function DrawerDialogDemo() {
             You can not change this selction.
           </DrawerDescription>
         </DrawerHeader>
-        <ProfileForm className="px-4" />
+        <ConfimSelection setOpen={setOpen} className="px-4" />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
@@ -68,11 +68,26 @@ export function DrawerDialogDemo() {
   );
 }
 
-function ProfileForm({ className }: React.ComponentProps<"form">) {
+function ConfimSelection({
+  className,
+  setOpen,
+}: React.ComponentProps<"div"> & { setOpen: React.SetStateAction }) {
+  function handleOnClickNo() {
+    setOpen(false);
+  }
+
+  function handleOnClickYes() {
+    setOpen(false);
+  }
+
   return (
-    <div className="flex flex-col md:flex-row gap-4 w-full">
-      <Button>Yes</Button>
-      <Button variant="outline">No</Button>
+    <div className={cn("flex flex-col md:flex-row gap-4 w-full", className)}>
+      <Button onClick={handleOnClickYes} className="flex-1">
+        Yes
+      </Button>
+      <Button className="flex-1" variant="outline" onClick={handleOnClickNo}>
+        No
+      </Button>
     </div>
   );
 }

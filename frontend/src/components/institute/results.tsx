@@ -1,4 +1,10 @@
+import ElectionPill from "../election-pill";
+
 const InstituteResult = () => {
-  return <div></div>;
+  return (
+    <div>
+      <ElectionPill />
+    </div>
+  );
 };
 export default InstituteResult;

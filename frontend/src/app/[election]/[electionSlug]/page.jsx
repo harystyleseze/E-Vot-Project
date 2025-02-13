@@ -11,13 +11,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Page() {
   const [elected, setElected] = useState();
-
-  const router = useRouter();
 
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",

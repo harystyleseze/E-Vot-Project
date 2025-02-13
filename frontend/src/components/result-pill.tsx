@@ -54,7 +54,7 @@ const ResultPill = (props) => {
       </div>
       <div className="row-start-2 col-span-2 md:col-auto md:row-span-1 w-full pt-3 md:pt-0 text-center md:pl-4">
         <Link
-          href={`/${electionType}/one`}
+          href={`/${electionType}/the-great-election/result`}
           className={cn(buttonVariants(), "w-full")}
         >
           Open
@@ -64,7 +64,7 @@ const ResultPill = (props) => {
   );
 };
 
-export default ElectionPill;
+export default ResultPill;
 
 /*
  *  @typedef {Object} ElectionPillProps

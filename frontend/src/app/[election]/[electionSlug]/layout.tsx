@@ -4,9 +4,10 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {
-  params: { "election-slug": string };
+  params: { electionSlug: string };
 }): Promise<Metadata> {
-  const electionSlug = params["election-slug"];
+  const slug = await params;
+  const electionSlug = slug.electionSlug;
   return {
     title: `Election: ${electionSlug}`,
     description: `Details for election ${electionSlug}`,

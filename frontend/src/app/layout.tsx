@@ -4,6 +4,7 @@ import Navbar from "../components/nav/Navbar";
 import ClientProvider from "@/components/providers/ClientProviders";
 import { Metadata } from "next";
 import { Toaster } from "@/components/ui/sonner";
+import MaxWidthWrapper from "@/components/ui/max-width-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
     default: "E-Vote",
   },
   openGraph: {
-    description: "The decentralized voting platform on the internet to make your voice count!",
+    description:
+      "The decentralized voting platform on the internet to make your voice count!",
     url: process.env.NEXT_PUBLIC_URL!,
     siteName: "E-VOTE",
   },
@@ -31,8 +33,10 @@ export default function RootLayout({
       >
         <ClientProvider>
           <main className="flex flex-col">
-            <Navbar />
-            <div className="">{children}</div>
+            <MaxWidthWrapper className="pt-2 md:pt-0">
+              <Navbar />
+            </MaxWidthWrapper>
+            <MaxWidthWrapper className="">{children}</MaxWidthWrapper>
           </main>
         </ClientProvider>
         <Toaster />

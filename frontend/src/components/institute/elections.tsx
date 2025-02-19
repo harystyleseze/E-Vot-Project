@@ -3,7 +3,7 @@ import ElectionPill from "../election-pill";
 const InstituteElections = () => {
   return (
     <div>
-      <ElectionPill />
+      <ElectionPill electionType="institute" />
     </div>
   );
 };

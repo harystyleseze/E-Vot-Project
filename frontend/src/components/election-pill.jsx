@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { CandidateAvatar } from "./ui/candidate-avatar";
 import { cn } from "@/lib/utils";
 
 /*
  * @type {ElectionPillProps}
  * */
-const ElectionPill = (props) => {
-  const { electionType } = props;
+// const ElectionPill = ({electionType}: {electionType: string}) => {
+const ElectionPill = ({ electionType }) => {
   const candidates = new Array(7).fill({
     img: "/assets/candidate1.avif",
     candidate: "Emeka Peters",

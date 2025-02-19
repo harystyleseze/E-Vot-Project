@@ -1,9 +1,9 @@
-import ElectionPill from "../election-pill";
+import ResultPill from "../result-pill";
 
 const InstituteResult = () => {
   return (
     <div>
-      <ElectionPill />
+      <ResultPill electionType="institute" />
     </div>
   );
 };

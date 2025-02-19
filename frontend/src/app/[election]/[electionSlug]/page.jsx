@@ -1,7 +1,6 @@
 "use client";
-
+import { BackButton } from "@/components/ui/back-button";
 import { VoteDrawerDialog } from "@/components/confirm-vote";
-import { Button } from "@/components/ui/button";
 import { CandidateAvatar } from "@/components/ui/candidate-avatar";
 import {
   Card,
@@ -23,6 +22,10 @@ export default function Page() {
 
   return (
     <div className="w-full">
+      <div className="py-4">
+        <BackButton />
+      </div>
+
       <Card className="bg-transparent md:bg-white dark:md:bg-transparent border-0 md:pb-6">
         <CardHeader className="bg-primary  md:bg-white dark:md:bg-primary dark:md:text-slate-100 rounded-t-lg flex flex-row text-white md:text-slate-900 items-end justify-between">
           <div className="flex flex-col items-start gap-4">

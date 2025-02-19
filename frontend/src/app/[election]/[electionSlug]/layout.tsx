@@ -1,10 +1,9 @@
-import { BackButton } from "@/components/ui/back-button";
 import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { electionSlug: string };
+  params: Promise<{ electionSlug: string }>;
 }): Promise<Metadata> {
   const slug = await params;
   const electionSlug = slug.electionSlug;
@@ -25,9 +24,6 @@ export default function ElectionLayout({
 }) {
   return (
     <div className="flex flex-col items-start relative h-[calc(100lvh-96px)] md:h-[calc(100lvh-64px)]">
-      <div className="py-4">
-        <BackButton />
-      </div>
       {children}
     </div>
   );

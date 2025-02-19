@@ -1,11 +1,9 @@
-import ElectionPill from "@/components/election-pill";
+import ResultPill from "../result-pill";
 
 const GovtElectionResult = () => {
-  const elections = new Array(7).fill(0);
-
   return (
     <div>
-      <ElectionPill />
+      <ResultPill electionType="government" />
     </div>
   );
 };

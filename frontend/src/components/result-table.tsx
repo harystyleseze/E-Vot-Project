@@ -63,7 +63,7 @@ const ResultTable = ({ voters }: { voters: VoterT[] }) => {
     <div className="w-full flex flex-col">
       <div className="hidden sm:block">
         <div className="flex items-center justify-between py-4 w-full">
-          <div className="=flex w-4/6 flex-col items-start justify-center relative w-full h-12 rounded-3xl bg-slate-100 dark:bg-slate-800">
+          <div className="=flex w-4/6 flex-col items-start justify-center relative h-12 rounded-3xl bg-slate-100 dark:bg-slate-800">
             <Search className="h-12 absolute inset-y-0 left-4 translate-x-2" />
             <input
               placeholder="Filter address..."

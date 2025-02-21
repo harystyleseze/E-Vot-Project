@@ -14,12 +14,18 @@ importers:
       '@headlessui/react':
         specifier: ^2.1.4
         version: 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@hookform/resolvers':
+        specifier: ^4.1.0
+        version: 4.1.0(react-hook-form@7.54.2(react@19.0.0))
       '@radix-ui/react-dialog':
         specifier: ^1.1.5
         version: 1.1.5(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.6
         version: 2.1.6(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-label':
+        specifier: ^2.1.2
+        version: 2.1.2(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot':
         specifier: ^1.1.1
         version: 1.1.1(@types/react@19.0.8)(react@19.0.0)
@@ -53,6 +59,9 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-hook-form:
+        specifier: ^7.54.2
+        version: 7.54.2(react@19.0.0)
       react-toastify:
         specifier: ^10.0.5
         version: 10.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -202,6 +211,11 @@ packages:
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
       react-dom: ^18 || ^19 || ^19.0.0-rc
+
+  '@hookform/resolvers@4.1.0':
+    resolution: {integrity: sha512-fX/uHKb+OOCpACLc6enuTQsf0ZpRrKbeBBPETg5PCPLCIYV6osP2Bw6ezuclM61lH+wBF9eXcuC0+BFh9XOEnQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -695,6 +709,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-label@2.1.2':
+    resolution: {integrity: sha512-zo1uGMTaNlHehDyFQcDZXRJhUPDuukcnHz0/jnrup0JA6qL+AFpAnty+7VKa9esuU5xTblAZzTGYJKSKaBxBhw==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-menu@2.1.6':
@@ -1462,6 +1489,9 @@ packages:
 
   caniuse-lite@1.0.30001695:
     resolution: {integrity: sha512-vHyLade6wTgI2u1ec3WQBxv+2BrTERV28UXQu9LO6lZ9pYeMk34vjXFLOxo1A4UBA8XTL4njRQZdno/yYaSmWw==}
+
+  caniuse-lite@1.0.30001700:
+    resolution: {integrity: sha512-2S6XIXwaE7K7erT8dY+kLQcpa5ms63XlRkMkReXjle+kf6c5g38vyMl+Z5y8dSxOFDhcFe+nxnn261PLxBSQsQ==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -2801,6 +2831,12 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
+  react-hook-form@7.54.2:
+    resolution: {integrity: sha512-eHpAUgUjWbZocoQYUHposymRb4ZP6d0uwUnooL2uOybA9/3tPUvoAKqEWK1WaSiTxxOfTpffNZP7QwlnM3/gEg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3693,6 +3729,11 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
+  '@hookform/resolvers@4.1.0(react-hook-form@7.54.2(react@19.0.0))':
+    dependencies:
+      caniuse-lite: 1.0.30001700
+      react-hook-form: 7.54.2(react@19.0.0)
+
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -4208,6 +4249,14 @@ snapshots:
     dependencies:
       '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.0.8)(react@19.0.0)
       react: 19.0.0
+    optionalDependencies:
+      '@types/react': 19.0.8
+
+  '@radix-ui/react-label@2.1.2(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.0.2(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
       '@types/react': 19.0.8
 
@@ -5353,6 +5402,8 @@ snapshots:
   camelcase@5.3.1: {}
 
   caniuse-lite@1.0.30001695: {}
+
+  caniuse-lite@1.0.30001700: {}
 
   chalk@4.1.2:
     dependencies:
@@ -6881,6 +6932,10 @@ snapshots:
     dependencies:
       react: 19.0.0
       scheduler: 0.25.0
+
+  react-hook-form@7.54.2(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   react-is@16.13.1: {}
 

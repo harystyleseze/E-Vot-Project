@@ -31,6 +31,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { VoterT } from "@/lib/fake-data";
+import SearchInput from "@/components/ui/search-input";
 
 import { ChevronDown, Search } from "lucide-react";
 import { Button } from "./ui/button";
@@ -63,19 +64,16 @@ const ResultTable = ({ voters }: { voters: VoterT[] }) => {
     <div className="w-full flex flex-col">
       <div className="hidden sm:block">
         <div className="flex items-center justify-between py-4 w-full">
-          <div className="=flex w-4/6 flex-col items-start justify-center relative h-12 rounded-3xl bg-slate-100 dark:bg-slate-800">
-            <Search className="h-12 absolute inset-y-0 left-4 translate-x-2" />
-            <input
-              placeholder="Filter address..."
-              value={
-                (table.getColumn("address")?.getFilterValue() as string) ?? ""
-              }
-              onChange={(event) =>
-                table.getColumn("address")?.setFilterValue(event.target.value)
-              }
-              className="bg-transparent absolute inset-y-1 left-14 right-4 focus:outline-none active:outline-none"
-            />
-          </div>
+          <SearchInput
+            placeholder="Filter address..."
+            value={
+              (table.getColumn("address")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(event) =>
+              table.getColumn("address")?.setFilterValue(event.target.value)
+            }
+            className="w-4/6"
+          />
           <div className="flex justify-end">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

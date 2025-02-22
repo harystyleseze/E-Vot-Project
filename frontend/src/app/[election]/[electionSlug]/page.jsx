@@ -37,7 +37,7 @@ export default function Page() {
             Restricted
           </div>
         </CardHeader>
-        <CardContent className="mb-24 md:mb-0 h-full py-6 overflow-y-scroll grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+        <CardContent className="mb-24 md:mb-0 h-full py-6 overflow-y-scroll grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
           {candidates.map((cand, idx) => (
             <div
               key={idx}

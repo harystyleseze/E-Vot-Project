@@ -42,13 +42,17 @@ export default function Page() {
             <div
               key={idx}
               className={cn(
-                "h-32 md:h-full transition-all rounded-lg",
-                elected === idx && "border border-slate-700 relative",
+                "h-32 md:h-full transition-all rounded-lg overflow-hidden",
               )}
               onClick={() => setElected(idx)}
             >
               {elected === idx && (
-                <div className="absolute inset-0 bg-slate-900 z-10 opacity-50 transition-all" />
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-slate-900 z-10 opacity-50 transition-all",
+                    elected === idx && "border border-slate-700 relative",
+                  )}
+                />
               )}
               <CandidateAvatar image={cand.img} name={cand.candidate} />
             </div>

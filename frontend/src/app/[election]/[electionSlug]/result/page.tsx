@@ -30,12 +30,12 @@ const ElectionResultPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col-reverse lg:flex-row lg:items-start lg:h-[530px] gap-4 lg:gap-8">
-        <div className="flex-[3]">
+      <div className="w-full flex flex-col-reverse lg:flex-row  h-full gap-4 lg:gap-8">
+        <div className="flex-[5]">
           {/* desktop search + voters table*/}
           <ResultTable voters={data.voters} />
         </div>
-        <Card className="flex-1 rounded-lg overflow-hidden border-0 lg:border  lg:bg-slate-100  lg:dark:bg-slate-800">
+        <Card className="flex-[2] rounded-lg lg:h-full overflow-hidden border-0 lg:border  lg:bg-slate-100  lg:dark:bg-slate-800">
           {/* candidates*/}
           <CardHeader className="px-0 lg:px-6">
             <CardTitle className="flex items-end justify-between">
